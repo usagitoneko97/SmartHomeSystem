@@ -1,5 +1,6 @@
 #include "unity.h"
-#include "mock_smartsystem.h"
+#include "smartsystem.h"
+#include "mock_get_coordinate.h"
 
 GpsCoordinate coordinateLessThanHouse = {
   5682,
@@ -16,11 +17,8 @@ void tearDown(void)
 
 void test_smartsystem_house_expect_turnON_aircond_WaterHeater(void)
 {
-
   getGpsCoordinate_ExpectAndReturn(coordinateLessThanHouse);
   turn_Expect(AIRCOND, ON);
   turn_Expect(WATER_HEATER, ON);
   doSmartThing();
-
-
 }
