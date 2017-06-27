@@ -16,7 +16,6 @@ GpsCoordinate kitchen = {
   5400,
 }; //5404
 
-
 double getActualRadius(GpsCoordinate gpsC){
   return sqrt(pow(gpsC.x, 2) + pow(gpsC.y, 2));
 }
@@ -26,12 +25,8 @@ void doSmartThing(){
   GpsCoordinate gps;
 
   gps = getGpsCoordinate(); //update coordinate of user
-  if(isArea(gps, house, 2000) == TRUE){
-    turn(AIRCOND, ON);
-    turn(WATER_HEATER, ON);
-  }
 
-  /*if(abs(getActualRadius(gps)-getActualRadius(house))<=2000){
+  if(abs(getActualRadius(gps)-getActualRadius(house))<=2000){
      turn(AIRCOND, ON);
      turn(WATER_HEATER, ON);
   }
@@ -43,6 +38,6 @@ void doSmartThing(){
   }
   if(abs(getActualRadius(gps)-getActualRadius(kitchen))<=50){
      turn(KITCHEN_LIGHT, ON);
-  }*/
+  }
 
 }
